@@ -17,9 +17,15 @@ public with sharing class UsersCallout {
 
         System.debug('Response:' + response.getBody());
 
-        //Converting JSON response to the UsersWrapper
-        UsersWrapper wrapperInstance = (UsersWrapper) (JSON.deserialize(response.getBody(), UsersWrapper.class));
+      if(response.getStatusCode() == 200 ) {
 
+            //Converting JSON response to the UsersWrapper
+            List<UsersWrapper> userList = (List<UsersWrapper>) (JSON.deserialize(response.getBody(), List<UsersWrapper>.class));
+
+            System.debug('wrapperInstance Response:' + userList);
+        } else {
+            System.debug('Error Occurred:' + response.getStatus());
+        }
     }
 
     //Wrapper Class to hold the users from the response
