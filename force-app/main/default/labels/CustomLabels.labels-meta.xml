@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Chatter_Group_Id</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Chatter Group Id</shortDescription>
+        <value>0F98c000000soXfCAI</value>
+    </labels>
+    <labels>
+        <fullName>Integration_User_Group</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Integration User Group</shortDescription>
+        <value>0F98c000000soZMCAY</value>
+    </labels>
+    <labels>
+        <fullName>test</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>test</shortDescription>
+        <value>0F98c000000soZHCAY</value>
+    </labels>
+</CustomLabels>
