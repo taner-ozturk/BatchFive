@@ -1,3 +1,9 @@
+
+UsersCallout.fetchAllUsers();
+UsersCallout.checkContactAndCreate('aaryan_kakkar@considine.info');
+UsersCallout.createUserInGoREST('Betty', 'bet@gmail.com', 'female', 'active');
+
+
 // Account accountInstance = [SELECT Id, Name, Type, First_Name__c, Company_Name__c FROM Account LIMIT 1];
 // System.debug('accountInstance:' + accountInstance);
 // String accountJSONString = JSON.serialize(accountInstance);
@@ -14,4 +20,3 @@
 
 // Map<Id, Account> accountMap = (Map<Id, Account>)(accList); 
 
-UsersCallout.fetchAllUsers();
