@@ -1,4 +1,6 @@
 
+SFDC_WS_Integrations.getCurrentWeatherInfo('Hounston');
+
 UsersCallout.fetchAllUsers();
 UsersCallout.checkContactAndCreate('aaryan_kakkar@considine.info');
 UsersCallout.createUserInGoREST('Betty', 'bet@gmail.com', 'female', 'active');
