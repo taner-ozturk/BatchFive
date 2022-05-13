@@ -1,5 +1,5 @@
-
-SFDC_WS_Integrations.getCurrentWeatherInfo('Hounston');
+SFDC_Conidesk_Integration.getBitcoinPrice();
+SFDC_WS_Integrations.getCurrentWeatherInfo('Houston');
 
 UsersCallout.fetchAllUsers();
 UsersCallout.checkContactAndCreate('aaryan_kakkar@considine.info');
