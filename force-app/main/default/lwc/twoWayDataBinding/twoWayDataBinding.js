@@ -20,7 +20,9 @@ export default class TwoWayDataBinding extends LightningElement {
     name = "Taner";
     title = "Salesforce Developer";
 
-    handleChange(event) {
+    bizimOlayimiz(event) {
         this.title = event.target.value;
     }
+
+
 }

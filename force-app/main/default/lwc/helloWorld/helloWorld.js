@@ -11,7 +11,7 @@ export default class HelloWorld extends LightningElement {
     };
 
     student ={
-        name : "Taner",
-        city : "Adana"
+        name : "Tayfun",
+        city : "İstanbul"
     }
 }
