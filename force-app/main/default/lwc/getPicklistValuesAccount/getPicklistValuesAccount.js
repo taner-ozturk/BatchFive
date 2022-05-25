@@ -10,24 +10,11 @@ export default class GetPicklistValuesAccount extends LightningElement {
     industryOptions = [];
     selectedIndustry;
 
-    @wire(getObjectInfo, {objectApiName: ACCOUNT_OBJECT})
-    objectInfoHandler({data, error}) {
-        if(data) {
-            console.log(data);
-            this.customerRtId = data.defaultRecordTypeId;
-            const rtids = data.recordTypeInfos;
-            this.vendorRtId = Object.keys(rtids).find(rtid => rtids[rtid].name === 'Vendor');
-        }
-        if(error) {
-            console.log(error);
-            this.error = error;
-        }
-    }
 
-    @wire(getPicklistValues, {fieldApiName: INDUSTRY_FIELD, recordTypeId: '$vendorRtId'})
+    @wire(getPicklistValues, {fieldApiName: INDUSTRY_FIELD, recordTypeId: '0128c000002EyA4AAK'})
     picklistHandler({data, error}) {
         if(data) {
-            console.log(data);
+            console.log('getPicklistValues:',data);
             this.industryOptions = this.picklistGenerator(data);
         }
         if(error) {
@@ -37,9 +24,19 @@ export default class GetPicklistValuesAccount extends LightningElement {
     }
 
     picklistGenerator(data) {
-        return data.values.map(item => ({
-            label : item.label,
-            value : item.value
+        return data.values.map(a => ({
+            label : a.label,
+            value : a.value
         }));
     }
+
+    // industryOptions = [
+    //     {label : 'Agriculture',
+    //     value : 'Agriculture'},
+    //     {label : 'Apparel',
+    //     value : 'Apparel'},
+    //     {label : 'Banking',
+    //     value : 'Banking'},
+    // ];
+
 }

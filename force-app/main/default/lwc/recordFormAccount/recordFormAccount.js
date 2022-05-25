@@ -19,5 +19,5 @@ export default class RecordFormAccount extends LightningElement {
         });
         this.dispatchEvent(successToast);
     }
-   
+    
 }

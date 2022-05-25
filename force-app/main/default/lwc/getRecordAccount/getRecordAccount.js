@@ -12,7 +12,7 @@ const FIELDS = [NAME_FIELD, TYPE_FIELD, INDUSTRY_FIELD, REVENUE_FIELD, ACC_NUM_F
 
 export default class GetRecordAccount extends LightningElement {
     /** WAY 1 **/
-    // recordId = '0015j00000Ymy8EAAR';
+    // recordId = '0018c00002HrodfAAB';
     // name;
     // type;
     // industry;
@@ -23,7 +23,7 @@ export default class GetRecordAccount extends LightningElement {
     // @wire(getRecord, {recordId: '$recordId', fields: FIELDS})
     // accountHandler({data, error}) {
     //     if(data) {
-    //        console.log(data); //data.fields.fieldApiName.value
+    //        console.log('getRecord:',data); //data.fields.fieldApiName.value
     //        this.name = data.fields.Name.value;
     //        this.type = data.fields.Type.value;
     //        this.industry = data.fields.Industry.value;
@@ -56,10 +56,13 @@ export default class GetRecordAccount extends LightningElement {
            this.revenue = getFieldDisplayValue(data, REVENUE_FIELD);
            this.accnum = getFieldValue(data, ACC_NUM_FIELD);
            this.rating = getFieldValue(data, RATING_FIELD);
+           this.industry = data.fields[Industry_Field.fieldApiName].value;
         }
         if(error) {
             console.error(error);
         }
     }
+
+   
     /** WAY 2 END */
 }

@@ -1,7 +1,7 @@
 import { getRecord } from 'lightning/uiRecordApi';
 import { LightningElement, wire } from 'lwc';
 
-import ACCOUNT_FIELD from '@salesforce/schema/Case.AccountId';
+import ACCOUNT_FIELD from '@salesforce/schema/Case.Account.Name';
 import SUBJECT_FIELD from '@salesforce/schema/Case.Subject';
 import PRIORITY_FIELD from '@salesforce/schema/Case.Priority';
 import REASON_FIELD from '@salesforce/schema/Case.Reason';
@@ -12,7 +12,7 @@ const FIELDS = [ACCOUNT_FIELD, SUBJECT_FIELD, PRIORITY_FIELD, REASON_FIELD, TYPE
 
 export default class Week2Uc4 extends LightningElement {
 
-    recordId = '5008c00001Isl4wAAB';
+    recordId = '5005j00000KctdUAAR';
     account;
     subject;
     reason;
@@ -23,8 +23,8 @@ export default class Week2Uc4 extends LightningElement {
     @wire(getRecord, {recordId: '$recordId', fields: FIELDS})
     recordHandler({data, error}) {
         if(data) {
-            console.log('getRecord : ', data);
-            this.account = data.fields.AccountId.value;
+            console.log(data);
+            this.account = data.fields.Account.displayValue;
             this.subject = data.fields.Subject.value;
             this.priority = data.fields.Priority.value;
             this.reason = data.fields.Reason.value;
