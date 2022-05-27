@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Imperative Apex">
+        <div class="slds-var-m-around_medium">
+            <lightning-combobox
+                label="Select a type to Opps related to that..."
+                value={selectedType}
+                options={typeOptions}
+                onchange={changeHandler}>
+            </lightning-combobox>
+            <template if:true={opps}>
+                <div class="slds-var-m-top_small"><strong>SEARCH RESULTS:</strong></div>
+                <template for:each={opps} for:item="opp">
+                    <div key={opp.Id} class="slds-var-m-bottom_small">
+                        <strong>Name: </strong> {opp.Name} <br/>
+                        <strong>Type: </strong> {opp.Type} <br/>
+                        <strong>Amount: </strong> {opp.Amount} <br/>
+                        <strong>Stage Name: </strong> {opp.StageName} <br/>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>
