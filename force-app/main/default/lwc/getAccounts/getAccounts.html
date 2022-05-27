@@ -1,0 +1,14 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-card title="Get Records" icon-name="standard:account">
+        <div class="slds-m-around_medium">
+            <template if:true={gelmisAccounts.data}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={gelmisAccounts.data}
+                    columns={columns}>
+                </lightning-datatable>
+            </template>
+        </div>
+    </lightning-card>
+</template>
