@@ -31,4 +31,12 @@ public with sharing class AccountCtrl {
                 WITH SECURITY_ENFORCED];
     }
 
+
+    //get all the accounts in the system
+    @AuraEnabled(cacheable=true)
+    public static List<Account> getAllAccounts() {
+        return [SELECT Id, Name FROM Account WITH SECURITY_ENFORCED];
+    }
+    
+
 }

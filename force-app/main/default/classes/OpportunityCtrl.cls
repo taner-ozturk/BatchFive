@@ -2,7 +2,7 @@ public with sharing class OpportunityCtrl {
     //get all the opps whose stage matches with the given
     @AuraEnabled(cacheable=true)
     public static List<Opportunity> getOppsByStage(String stage) {
-        return [SELECT Name, Type, Amount, StageName
+        return [SELECT Name, Type, Amount, StageName, CloseDate
                 FROM Opportunity
                 WHERE StageName = :stage
                 WITH SECURITY_ENFORCED
@@ -19,4 +19,15 @@ public with sharing class OpportunityCtrl {
                 LIMIT 10];
     }
 
+    //calculate the total amounts of all opps under the given account
+    @AuraEnabled
+    public static Decimal calculateOppAmount(Id accountId) {
+        Decimal total = 0.0;
+        for(Opportunity opp:[SELECT Id, Amount FROM Opportunity WHERE AccountId =:accountid WITH SECURITY_ENFORCED]){
+            if (opp.Amount != null){
+                 total=total + opp.Amount;
+            }
+        }
+        return total;
+    }
 }
