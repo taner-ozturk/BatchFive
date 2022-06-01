@@ -1,5 +1,5 @@
 import { getFieldDisplayValue, getFieldValue, getRecord } from 'lightning/uiRecordApi';
-import { LightningElement, wire } from 'lwc';
+import { api, LightningElement, wire } from 'lwc';
 
 import NAME_FIELD from '@salesforce/schema/Account.Name';
 import TYPE_FIELD from '@salesforce/schema/Account.Type';
@@ -38,7 +38,7 @@ export default class GetRecordAccount extends LightningElement {
     /** WAY 1 END **/
 
     /** WAY 2 **/
-    recordId = '0018c00002HrodfAAB';
+    @api recordId ;
     name;
     type;
     industry;

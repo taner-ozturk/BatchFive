@@ -1,6 +1,6 @@
 public with sharing class OpportunityCtrl {
     //get all the opps whose stage matches with the given
-    @AuraEnabled(cacheable=true)
+    @AuraEnabled
     public static List<Opportunity> getOppsByStage(String stage) {
         return [SELECT Name, Type, Amount, StageName, CloseDate
                 FROM Opportunity
@@ -23,7 +23,7 @@ public with sharing class OpportunityCtrl {
     @AuraEnabled
     public static Decimal calculateOppAmount(Id accountId) {
         Decimal total = 0.0;
-        for(Opportunity opp:[SELECT Id, Amount FROM Opportunity WHERE AccountId =:accountid WITH SECURITY_ENFORCED]){
+        for(Opportunity opp:[SELECT Id, Amount FROM Opportunity WHERE AccountId =:accountId WITH SECURITY_ENFORCED]){
             if (opp.Amount != null){
                  total=total + opp.Amount;
             }
