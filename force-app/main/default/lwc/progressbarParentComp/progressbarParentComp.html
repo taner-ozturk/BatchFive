@@ -1,0 +1,12 @@
+<template>
+    <lightning-card  title="PROGRESS BAR " >
+
+        
+        <lightning-progress-bar value={progressValue} size="large"></lightning-progress-bar>
+
+
+        <c-child-progressbar-comp onprogressbarchange={handleProgress}></c-child-progressbar-comp>
+
+    </lightning-card>
+
+</template>

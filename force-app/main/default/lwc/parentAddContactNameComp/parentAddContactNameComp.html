@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="ADD CONTACT">
+        <div class="slds-var-m-around_medium">
+            <c-child-add-contact-name-comp></c-child-add-contact-name-comp>
+            <lightning-input
+                type="text"
+                value={studentName}
+                onchange={changeHandler}
+                >
+            </lightning-input>
+            <lightning-button
+                variant="brand"
+                label="Add Student Name"
+                onclick={handleClick}>
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>

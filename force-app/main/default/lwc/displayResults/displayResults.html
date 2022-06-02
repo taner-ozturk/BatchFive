@@ -1,0 +1,30 @@
+<template>
+    <div class="slds-var-m-top_medium">
+        <template if:true={results}>
+            <strong>RESULTS:</strong>
+            <!-- sldsValidatorIgnoreNextLine -->
+            <lightning-datatable
+                key-field="Id"
+                data={results}
+                columns={columns}>
+            </lightning-datatable>
+        </template>
+    </div>
+</template>
+
+<!-- <template>
+    <div class="slds-var-m-top_medium">
+        <template if:true={results}>
+            <strong>RESULTS:</strong>
+           
+         <lightning-datatable
+                key-field="Id"
+                data={results}
+                sorted-by="Type"
+                sorted-direction="desc"
+                onsort={sortHandler}
+                columns={columns}>
+            </lightning-datatable>
+        </template>
+    </div>
+</template> -->
